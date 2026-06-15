@@ -1,0 +1,90 @@
+/* Definição das variáveis de cores para os temas */
+:root {
+    --cor-fundo: #f4f4f9;
+    --cor-texto: #333333;
+    --cor-cabecalho: #6200ea;
+    --cor-texto-cabecalho: #ffffff;
+    --cor-card: #ffffff;
+    --sombra: rgba(0, 0, 0, 0.1);
+}
+
+/* Classe dinâmica que será injetada pelo JavaScript */
+body.tema-escuro {
+    --cor-fundo: #121212;
+    --cor-texto: #e0e0e0;
+    --cor-cabecalho: #1f1b24;
+    --cor-texto-cabecalho: #bb86fc;
+    --cor-card: #1e1e1e;
+    --sombra: rgba(255, 255, 255, 0.05);
+}
+
+/* Reset básico e tipografia amigável (UX) */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    transition: background-color 0.3s, color 0.3s;
+    line-height: 1.6;
+}
+
+.cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background-color: var(--cor-cabecalho);
+    color: var(--cor-texto-cabecalho);
+    transition: background-color 0.3s;
+}
+
+#btn-tema {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    background-color: var(--cor-texto-cabecalho);
+    color: var(--cor-cabecalho);
+}
+
+/* Layout Responsivo com Flexbox */
+.container {
+    padding: 40px 5%;
+}
+
+.artigos-flex {
+    display: flex;
+    flex-wrap: wrap; /* Permite quebrar linha em telas menores */
+    gap: 30px;
+    justify-content: center;
+}
+
+.card-artigo {
+    background-color: var(--cor-card);
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px var(--sombra);
+    flex: 1; /* Faz os cards crescerem igualmente */
+    min-width: 280px; /* Impede que fiquem muito finos no celular */
+    max-width: 500px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.card-artigo:hover {
+    transform: translateY(-5px); /* Efeito visual agradável (UX) */
+}
+
+.autoria {
+    margin-top: 20px;
+    padding-top: 10px;
+    border-top: 1px solid var(--sombra);
+    font-size: 0.9em;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9em;
+    opacity: 0.8;
+}
